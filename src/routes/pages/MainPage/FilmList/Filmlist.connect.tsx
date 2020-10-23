@@ -1,7 +1,7 @@
 import Filmlist from "./Filmlist";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { getDiscoverRequest,DiscoverMore,DiscoverGenres,DiscoverSort } from "../../../../redux/reducers/reduceFilm/action/actions";
+import { getDiscoverRequest} from "../../../../redux/reducers/reduceFilm/action/actions";
 import {Iredusers} from "../../../../redux/reducers/rootReducer"
 import {TinitialStateParams} from "../../../../redux/reducers/reduceFilm/reducer"
 /*

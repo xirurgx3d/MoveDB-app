@@ -33,8 +33,7 @@ const Filmlist:React.FC<IFilmListProps> = (props:IFilmListProps) =>{
         props.loadDiscover({...params,page:pageCount+1})
     }
 
-    type TdiscoverData = typeof discover[0]
-    console.log('render')
+    //console.log('render')
     
     return (
         <div>Filmlist

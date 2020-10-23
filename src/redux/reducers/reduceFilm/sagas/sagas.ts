@@ -1,7 +1,7 @@
 import { put, call, takeEvery } from "redux-saga/effects";
 import Api from "../../../../api/Api";
 import {ActionTypes} from "../@types/ActionsType"
-import { DiscoverResult,getGenres,DiscoverMore } from "../action/actions";
+import { DiscoverResult,getGenres } from "../action/actions";
 import ActionConst from "../constants/constants"
 
 // получение всех компонентов главной страницы
