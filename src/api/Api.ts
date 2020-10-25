@@ -31,7 +31,7 @@ import {typeAPI} from "./typeAPI"
  interface IMoviesAPI {
   getFilms:(parame?:any) => AxiosPromise<typeAPI.MovieItem>,
   AllgetGenres:() => void
-  getMove:(type?:string) => void
+  getMove:(id:number) => void
  }
 
  function getApi({api}:any):IMoviesAPI{
@@ -48,12 +48,8 @@ import {typeAPI} from "./typeAPI"
       AllgetGenres(){
         return request.get('/genre/movie/list')
       },
-      getMove(type = "боевик"){
-        return request.get('/discover/movie', {
-          params:{
-            with_genres:16
-          }
-        })
+      getMove(id:number){
+        return request.get('/movie/'+ id)
       }
     }
  }

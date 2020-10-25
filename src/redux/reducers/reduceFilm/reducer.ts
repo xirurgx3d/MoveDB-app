@@ -3,6 +3,7 @@ import ActionType from "./constants/constants"
 const initialState = {
     DISCOVER:[],
     genres:[],
+    detailFilm:{},
     params:{
         page:1,
         with_genres:null as number | null,
@@ -28,6 +29,8 @@ const reducer = (state:TinitialState = initialState, action:Taction):TinitialSta
             return setSate('DISCOVER',action.payload)
         case ActionType.GET_GENRES :
             return setSate('genres',action.payload)
+        case ActionType.DETAILFILM_RESULT :  
+            return setSate('detailFilm',action.payload)  
         default: return state
     }
 }

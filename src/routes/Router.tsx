@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
-import FilmDetails from './pages/MainPage/FilmDetails/FilmDetails';
+import FilmDetails from './pages/MainPage/FilmDetails/FilmDetails.connect';
 import Home from './pages/MainPage/FilmList/Filmlist.connect';
 
 
