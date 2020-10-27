@@ -1,5 +1,4 @@
 import Axios, { AxiosInstance, AxiosPromise } from "axios";
-import { getNodeMajorVersion } from "typescript";
 // 66857c14071235655ed7062019735dbf
 //httpsapi.themoviedb.org3movie550api_key=66857c14071235655ed7062019735dbf&language=ru
 import {typeAPI} from "./typeAPI"
@@ -32,6 +31,8 @@ import {typeAPI} from "./typeAPI"
   getFilms:(parame?:any) => AxiosPromise<typeAPI.MovieItem>,
   AllgetGenres:() => void
   getMove:(id:number) => void
+  getCredits:(id:number) => void
+  getRecommendations:(id:number) => void
  }
 
  function getApi({api}:any):IMoviesAPI{
@@ -48,8 +49,17 @@ import {typeAPI} from "./typeAPI"
       AllgetGenres(){
         return request.get('/genre/movie/list')
       },
+      // детали фильма
       getMove(id:number){
         return request.get('/movie/'+ id)
+      },
+      // список актеров
+      getCredits(id:number){
+        return request.get(`/movie/${id}/credits`)
+      },
+      // рекомендованные
+      getRecommendations(id:number){
+        return request.get(`movie/${id}/recommendations`)
       }
     }
  }

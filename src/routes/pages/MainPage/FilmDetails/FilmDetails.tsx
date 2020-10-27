@@ -1,7 +1,7 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import {TinitialStateParams} from "../../../../redux/reducers/reduceFilm/reducer"
+import React, { useEffect} from 'react';
 import { TstateProp } from './FilmDetails.connect';
+import CastFilms from '../../../../components/CastFilm/CastFilm';
+import RecomendFilm from '../../../../components/RecomendFilm/RecomendFilm';
 
 interface IFilmDetails extends TstateProp {
     match:{
@@ -9,18 +9,23 @@ interface IFilmDetails extends TstateProp {
     },
     loadFilmDetails:(id:number) => void
 }
-//params: TParams
+
 const FilmDetails:React.FC<IFilmDetails> = (props:IFilmDetails) =>{
     const id = props.match.params;
     const {detailsFilme} = props
-    //console.log(props.detailsFilme.title)
+    
+    
+
     useEffect(()=>{
         props.loadFilmDetails(id)
+        
     },[id])
 
     return (
         <div>
             <h1>Фильм</h1>
+            <CastFilms casts={detailsFilme.cast} />
+            <RecomendFilm Detailid={id} />
         </div>
     )
 }

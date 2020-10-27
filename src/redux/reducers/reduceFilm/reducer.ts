@@ -3,7 +3,9 @@ import ActionType from "./constants/constants"
 const initialState = {
     DISCOVER:[],
     genres:[],
-    detailFilm:{},
+    detailFilm:{
+        cast:[]
+    },
     params:{
         page:1,
         with_genres:null as number | null,

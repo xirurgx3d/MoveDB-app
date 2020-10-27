@@ -23,10 +23,9 @@ function* FilmsRequestSaga({payload}:any){
 // детали фильма
 function* DetailFilmsRequestSaga({payload:{id}} :any) {
     const res = yield call(Api.getMove, id)
-    yield put(DetailFrilmResult(res.data))
+    const act = yield call(Api.getCredits, id)
+    yield put(DetailFrilmResult(Object.assign(res.data,act.data)))
 }
-
-
 
 
 function* watchFilms(){

@@ -1,5 +1,5 @@
 import ActionConst from "../constants/constants"
-import {ActionDetaisTypes} from "../@types/actionsDetailsType"
+import {ActionDetaisTypes} from "../@types/ActionsDetailsType"
 
 const DetailFrilmRequest = (id:number):ActionDetaisTypes.TDetailFrilmRequest => ({
     type:ActionConst.GET_DETAILFILM_REQUEST,

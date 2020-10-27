@@ -13,6 +13,7 @@ const mapStateToProps = (state:Iredusers) => ({
 })
 // выводим типы, так как мы сами их и описывает
 // без описания интерфейса
+//export type TstateProp = ReturnType<typeof mapStateToProps>
 export type TstateProp = ReturnType<typeof mapStateToProps>
 
 const mapDispatchToProps = (dispatch:Function) => ({

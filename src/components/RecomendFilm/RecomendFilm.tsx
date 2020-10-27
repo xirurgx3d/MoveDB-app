@@ -1,0 +1,41 @@
+import React, { useEffect, useReducer } from 'react';
+import Api from '../../api/Api'
+import reducerDetail from '../../redux/reducers/FilmDetailsRedux';
+import {initialStateDetail,ActionsDetail} from '../../redux/reducers/FilmDetailsRedux';
+
+interface IRecomendFilm {
+    Detailid:{
+        id:number
+    }
+}
+const RecomendFilm:React.FC<IRecomendFilm> = (props) =>{
+    const {id} = props.Detailid
+    const [state, dispatch] = useReducer(reducerDetail, initialStateDetail);
+    console.log(props)
+    const getRecomendFilm = async () =>{
+        const result = await Api.getRecommendations(id)
+        dispatch(ActionsDetail.RecomendFilmResult(result.data.results.slice(1, 7)))
+    }
+    useEffect( () => {
+        getRecomendFilm()
+        return ()=> {
+            getRecomendFilm()
+        }
+    }, [id])
+
+    console.log('render rec')
+
+    return (
+        <>
+            <h2>Рекомендации</h2>
+            <ul>
+                {
+                    state.RecomendFilm.map((val:any,index:number)=>{
+                        return <li key={index}>{val.title}</li>
+                    })
+                }
+            </ul>
+        </>
+    )
+}
+export default RecomendFilm

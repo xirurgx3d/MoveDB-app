@@ -2,6 +2,7 @@
 //export default as namespace typeAPI;
 export declare namespace typeAPI{
     interface MovieItem {
+        results: any;
         vote_count: number;
         id: number;
         video: boolean;
