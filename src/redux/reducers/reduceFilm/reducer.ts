@@ -29,8 +29,8 @@ const reducer = (state:TinitialState = initialState, action:Taction):TinitialSta
             state
         case ActionType.DISCOVER_RESULT :
             return setSate('DISCOVER',action.payload)
-        case ActionType.GET_GENRES :
-            return setSate('genres',action.payload)
+        case ActionType.DISCOVER_MORE_RESULT :     
+            return setSate('DISCOVER',[...state.DISCOVER,...action.payload])
         case ActionType.DETAILFILM_RESULT :  
             return setSate('detailFilm',action.payload)  
         default: return state

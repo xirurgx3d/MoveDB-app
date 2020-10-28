@@ -18,9 +18,6 @@ const RecomendFilm:React.FC<IRecomendFilm> = (props) =>{
     }
     useEffect( () => {
         getRecomendFilm()
-        return ()=> {
-            getRecomendFilm()
-        }
     }, [id])
 
     console.log('render rec')

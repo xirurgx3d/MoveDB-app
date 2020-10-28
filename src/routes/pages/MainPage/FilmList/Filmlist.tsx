@@ -1,55 +1,59 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect} from 'react';
+import React, { useEffect, useRef} from 'react';
 import { Link } from "react-router-dom";
 import { TstateProp } from './Filmlist.connect';
 import {TinitialStateParams} from "../../../../redux/reducers/reduceFilm/reducer"
 import Sorting from '../../../../components/discover/sorting';
+import { useDispatch } from 'react-redux';
+import { getDiscoverMoreRequest, getDiscoverRequest } from '../../../../redux/reducers/reduceFilm/action/actions';
+import { createSelector } from 'reselect';
 
-// @TstateProp из  Filmlist.connect
-interface IFilmListProps extends TstateProp {
-    loadDiscover: (params?: TinitialStateParams) => void,   
- }
+export interface Ipametrs{
+    params:TinitialStateParams
+}
 
-const Filmlist:React.FC<IFilmListProps> = (props:IFilmListProps) =>{
-    const {discover,genres,params} = props
+
+
+
+const Filmlist:React.FC<TstateProp> = (props:TstateProp) =>{
+    const dispatch = useDispatch()
+    const {discover,params} = props
+    const ref = useRef(null)
 
     useEffect(() => {
-        props.loadDiscover()
+        dispatch(getDiscoverRequest())
+        //props.loadDiscover()
     },[])
-
-    const handleSort = (e:any) => {
-        const sortVal = e.target.dataset.sort
-        props.loadDiscover({...params,sort_by:sortVal})
-    }
-
-    const genresClick = (e:any,id:number) =>{
-        if(params.with_genres === id) return
-        
-        // обновляем до первой страницы
-        props.loadDiscover({...params,page:1,with_genres:id})
-    }
+    
     const handleScroll = () =>{
         let pageCount = params.page
-        //console.log(pageCount)
-        props.loadDiscover({...params,page:pageCount+1})
-    }
+        //dispatch(getDiscoverRequest({...params,page:pageCount+1}))
+        
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            window.removeEventListener("scroll", handleScroll);
+            setTimeout(()=> dispatch(getDiscoverMoreRequest({...params,page:pageCount+1})),500)
+            
 
-    //console.log('render')
+        }
+        console.log((window.innerHeight + window.scrollY))
+
+        console.log('h',document.body.offsetHeight)
+    }
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, [params.page]);
+
+    
     
     return (
         <div>Filmlist
-            <ul>
-                {
-                    genres.map((data:any, index) =>{
-                        return (<li key={index}>
-                            <a onClick={e => genresClick(e,data.id)}>{data.name}</a>
-                        </li>)
-                    })
-                }
-            </ul>
-            <Sorting />
+            <Sorting params={params} />
             <button onClick={handleScroll} >moreee</button>
-            <ul>
+            <ul >
                 {
                     discover.map((value:any, index) => {
                         return (<li key={index}>

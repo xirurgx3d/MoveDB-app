@@ -29,7 +29,7 @@ import {typeAPI} from "./typeAPI"
 
  interface IMoviesAPI {
   getFilms:(parame?:any) => AxiosPromise<typeAPI.MovieItem>,
-  AllgetGenres:() => void
+  AllgetGenres:() => AxiosPromise<typeAPI.MovieItem>,
   getMove:(id:number) => void
   getCredits:(id:number) => void
   getRecommendations:(id:number) => void

@@ -11,6 +11,15 @@ const DiscoverResult = (result:[]):ActionTypes.TDiscoverResult => ({
     type:ActionConst.DISCOVER_RESULT,
     payload:result
 })
+const getDiscoverMoreRequest = (params:any):ActionTypes.TDiscoverRequest => ({
+    type:ActionConst.GET_DISCOVER_MORE_REQUEST,
+    payload:params
+})
+
+const DiscoverMoreResult = (result:[]):ActionTypes.TDiscoverResult => ({
+    type:ActionConst.DISCOVER_MORE_RESULT,
+    payload:result
+})
 
 // все жанры фильмов
 const getGenres = (geners:[]):ActionTypes.TgetGenres => ({
@@ -23,4 +32,6 @@ export {
     getDiscoverRequest,
     DiscoverResult,
     getGenres,
+    getDiscoverMoreRequest,
+    DiscoverMoreResult
 }
