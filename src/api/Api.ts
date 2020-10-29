@@ -33,6 +33,8 @@ import {typeAPI} from "./typeAPI"
   getMove:(id:number) => void
   getCredits:(id:number) => void
   getRecommendations:(id:number) => void
+  getSerch:(value:string) => void
+  getTrending:() => void
  }
 
  function getApi({api}:any):IMoviesAPI{
@@ -60,6 +62,17 @@ import {typeAPI} from "./typeAPI"
       // рекомендованные
       getRecommendations(id:number){
         return request.get(`movie/${id}/recommendations`)
+      },
+      // поиск
+      getSerch(value:string){
+        return request.get(`/search/movie`,{
+          params:{
+            query:value  // Final Destination 3  Пункт назначения 3
+          }
+        })
+      },
+      getTrending(){
+        return request.get(`/trending/movie/week`)
       }
     }
  }

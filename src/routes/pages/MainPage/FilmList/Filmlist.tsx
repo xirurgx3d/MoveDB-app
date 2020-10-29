@@ -6,13 +6,10 @@ import {TinitialStateParams} from "../../../../redux/reducers/reduceFilm/reducer
 import Sorting from '../../../../components/discover/sorting';
 import { useDispatch } from 'react-redux';
 import { getDiscoverMoreRequest, getDiscoverRequest } from '../../../../redux/reducers/reduceFilm/action/actions';
-import { createSelector } from 'reselect';
 
 export interface Ipametrs{
     params:TinitialStateParams
 }
-
-
 
 
 const Filmlist:React.FC<TstateProp> = (props:TstateProp) =>{
@@ -20,10 +17,14 @@ const Filmlist:React.FC<TstateProp> = (props:TstateProp) =>{
     const {discover,params} = props
     const ref = useRef(null)
 
+    
     useEffect(() => {
         dispatch(getDiscoverRequest())
         //props.loadDiscover()
+    
     },[])
+
+
     
     const handleScroll = () =>{
         let pageCount = params.page
@@ -35,9 +36,8 @@ const Filmlist:React.FC<TstateProp> = (props:TstateProp) =>{
             
 
         }
-        console.log((window.innerHeight + window.scrollY))
-
-        console.log('h',document.body.offsetHeight)
+        //console.log((window.innerHeight + window.scrollY))
+        //console.log('h',document.body.offsetHeight)
     }
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);

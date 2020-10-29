@@ -13,7 +13,7 @@ import { createSelector } from "reselect";
 const selectDiscover = createSelector(
     state => state.films.DISCOVER,
     todos => {
-        console.log(todos)
+        //console.log(todos)
         return todos
     }
   )
