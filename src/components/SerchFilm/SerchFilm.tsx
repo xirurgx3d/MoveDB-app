@@ -34,7 +34,17 @@ const SerchFilm:React.FC = (props) =>{
 
 
     return (
-        <>
+                <div className="top-search">
+                    
+                    <input type="text" onChange={event => debouns(hendleSerch,event.target.value)} placeholder="Ищите и найдете!"/>
+                </div>
+    )
+}
+export default SerchFilm
+
+/*
+
+<>
             <input type="text" onChange={event => debouns(hendleSerch,event.target.value)} placeholder="Поиск" />
             <div>
                 {
@@ -43,6 +53,5 @@ const SerchFilm:React.FC = (props) =>{
                 
             </div>
         </>
-    )
-}
-export default SerchFilm
+
+*/

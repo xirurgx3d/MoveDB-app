@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useCallback, useEffect} from 'react';
 import { useDispatch} from 'react-redux'
 import { getDiscoverRequest } from '../../redux/reducers/reduceFilm/action/actions';
@@ -15,13 +16,14 @@ const Sorting:React.FC<Ipametrs> = (props) =>{
 
     //console.log(params)
     return (
-        <>
-            <div onClick={e => handleSort(e,params) }> 
-                <span  data-sort="popularity.desc">рейтинг / </span>
-                <span  data-sort="release_date.desc">по дате / </span>
-                <span  data-sort="vote_average.desc">голоса / </span>
-            </div>
-        </>
+        <div className="tabs">
+				<ul className="tab-links" onClick={e => handleSort(e,params) }>
+					<li  className="active"><a data-sort="popularity.desc">#Рейтинг</a></li>
+					<li><a data-sort="release_date.desc" > #По дате</a></li>
+					<li><a data-sort="vote_average.desc" >  #Голоса  </a></li>
+					                       
+		    </ul>
+        </div>
     )
 }
 export default Sorting

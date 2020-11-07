@@ -6,6 +6,8 @@ import {TinitialStateParams} from "../../../../redux/reducers/reduceFilm/reducer
 import Sorting from '../../../../components/discover/sorting';
 import { useDispatch } from 'react-redux';
 import { getDiscoverMoreRequest, getDiscoverRequest } from '../../../../redux/reducers/reduceFilm/action/actions';
+import FilmListTpl from '../../../../template/home/FilmList_tpl';
+import Card from '../../../../components/discover/Card';
 
 export interface Ipametrs{
     params:TinitialStateParams
@@ -50,9 +52,11 @@ const Filmlist:React.FC<TstateProp> = (props:TstateProp) =>{
     
     
     return (
-        <div>Filmlist
+        <>
             <Sorting params={params} />
-            <button onClick={handleScroll} >moreee</button>
+            <FilmListTpl>
+                <Card discover={discover} />
+            </FilmListTpl>
             <ul >
                 {
                     discover.map((value:any, index) => {
@@ -65,7 +69,7 @@ const Filmlist:React.FC<TstateProp> = (props:TstateProp) =>{
                     })
                 }
             </ul>
-        </div>
+        </>
 
     )
 }
