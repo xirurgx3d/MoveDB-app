@@ -28,13 +28,13 @@ import {typeAPI} from "./typeAPI"
  }
 
  interface IMoviesAPI {
-  getFilms:(parame?:any) => AxiosPromise<typeAPI.MovieItem>,
-  AllgetGenres:() => AxiosPromise<typeAPI.MovieItem>,
-  getMove:(id:number) => void
-  getCredits:(id:number) => void
-  getRecommendations:(id:number) => void
-  getSerch:(value:string) => void
-  getTrending:() => void
+  getFilms:(parame?:any) => AxiosPromise,
+  AllgetGenres:() => AxiosPromise,
+  getMove:(id:number) => AxiosPromise
+  getCredits:(id:number) => AxiosPromise
+  getRecommendations:(id:number) => AxiosPromise
+  getSerch:(value:string) => AxiosPromise
+  getTrending:() => AxiosPromise
  }
 
  function getApi({api}:any):IMoviesAPI{

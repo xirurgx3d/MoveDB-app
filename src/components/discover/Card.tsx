@@ -13,11 +13,11 @@ const Card:React.FC<Icard> = (props) => {
         <>
         {
             discover.map((value:any, index:number) => {
-                console.log(value)
+                
                 return (
                     <div key={index} className="slide-it">
                         <div className="movie-item">
-                            <div className="mv-img">
+                            <div className={value.poster_path ? "mv-img"  : "mv-img noimg" }>
                                 <img src={"https://image.tmdb.org/t/p/w342/" + value.poster_path } alt=""/>
                             </div>
                             <div className="hvr-inner">

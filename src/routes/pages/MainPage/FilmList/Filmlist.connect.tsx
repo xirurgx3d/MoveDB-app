@@ -11,10 +11,10 @@ import { createSelector } from "reselect";
 */
 
 const selectDiscover = createSelector(
-    state => state.films.DISCOVER,
-    todos => {
+    (state:Iredusers) => state.films.DISCOVER,
+    dis => {
         //console.log(todos)
-        return todos
+        return dis
     }
   )
 

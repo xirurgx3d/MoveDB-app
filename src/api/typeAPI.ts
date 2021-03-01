@@ -2,7 +2,7 @@
 //export default as namespace typeAPI;
 export declare namespace typeAPI{
     interface MovieItem {
-        genres: SetStateAction<number[]>;
+        genres: any;
         results: any;
         vote_count: number;
         id: number;

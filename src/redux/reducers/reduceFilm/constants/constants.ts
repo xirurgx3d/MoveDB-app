@@ -9,3 +9,5 @@ export default {
     DETAILFILM_RESULT:'DETAILFILM_RESULT'
 
 }
+
+export const URL = "https://image.tmdb.org/t/p/w342/"

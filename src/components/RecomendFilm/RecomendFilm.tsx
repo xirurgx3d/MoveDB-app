@@ -4,15 +4,13 @@ import reducerDetail from '../../redux/reducers/FilmDetailsRedux';
 import {initialStateDetail,ActionsDetail} from '../../redux/reducers/FilmDetailsRedux';
 
 interface IRecomendFilm {
-    Detailid:{
-        id:number
-    }
+    Detailid: any
 }
 const RecomendFilm:React.FC<IRecomendFilm> = (props) =>{
     const {id} = props.Detailid
     const [state, dispatch] = useReducer(reducerDetail, initialStateDetail);
-    console.log(props)
-    const getRecomendFilm = async () =>{
+    
+    const getRecomendFilm = async () => {
         const result = await Api.getRecommendations(id)
         dispatch(ActionsDetail.RecomendFilmResult(result.data.results.slice(1, 7)))
     }
@@ -20,7 +18,7 @@ const RecomendFilm:React.FC<IRecomendFilm> = (props) =>{
         getRecomendFilm()
     }, [id])
 
-    console.log('render rec')
+    //console.log('render rec')
 
     return (
         <>

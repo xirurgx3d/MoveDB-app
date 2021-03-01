@@ -4069,6 +4069,11 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-bottom: 50px;
+  width: 30%;
+}
+.noimg{
+  height: 513px;
 }
 .movie-items .movie-item {
   position: relative;
@@ -4416,7 +4421,8 @@ ul {
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  padding: 0 5%;
   flex-wrap: wrap;
   align-items: inherit;
   margin-right: -30px;

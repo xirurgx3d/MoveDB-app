@@ -3,11 +3,11 @@ import React, { useEffect, useRef} from 'react';
 import { Link } from "react-router-dom";
 import { TstateProp } from './Filmlist.connect';
 import {TinitialStateParams} from "../../../../redux/reducers/reduceFilm/reducer"
-import Sorting from '../../../../components/discover/sorting';
 import { useDispatch } from 'react-redux';
 import { getDiscoverMoreRequest, getDiscoverRequest } from '../../../../redux/reducers/reduceFilm/action/actions';
 import FilmListTpl from '../../../../template/home/FilmList_tpl';
 import Card from '../../../../components/discover/Card';
+import Sorting from '../../../../components/discover/Sorting';
 
 export interface Ipametrs{
     params:TinitialStateParams
@@ -25,7 +25,6 @@ const Filmlist:React.FC<TstateProp> = (props:TstateProp) =>{
         //props.loadDiscover()
     
     },[])
-
 
     
     const handleScroll = () =>{
@@ -57,18 +56,7 @@ const Filmlist:React.FC<TstateProp> = (props:TstateProp) =>{
             <FilmListTpl>
                 <Card discover={discover} />
             </FilmListTpl>
-            <ul >
-                {
-                    discover.map((value:any, index) => {
-                        return (<li key={index}>
-                            <Link to={`film-detail/${value.id}`}>
-                                <h2>{value.title}</h2>
-                            </Link>
-                            
-                        </li>)
-                    })
-                }
-            </ul>
+            
         </>
 
     )
