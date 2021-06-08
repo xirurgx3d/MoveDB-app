@@ -1,3 +1,4 @@
 *.html linguist-vendored
-public/* linguist-vendored
-*.tsx linguist-language=TypeScript
+* linguist-vendored
+*.tsx linguist-vendored=false
+*.ts linguist-vendored=false
