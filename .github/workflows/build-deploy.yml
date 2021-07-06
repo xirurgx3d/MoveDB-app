@@ -7,17 +7,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v4.1.4
-    
-    - name: Install and Build
-      run: |
-        npm install
-        npm run build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.4
+      
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
 
-    - name: Deploy 🚀
-      uses: xirurgx3d/github-pages-deploy-action@4.1.4
-      with:
-        branch: gh-pages
-        folder: build      
+      - name: Deploy 🚀
+        uses: xirurgx3d/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: build      
