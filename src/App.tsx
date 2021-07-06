@@ -8,7 +8,7 @@ const App:React.FC = () => {
     return (
         <>
         <Header>
-            <h1>hello action</h1>
+            <h1>hello action 2</h1>
             <SerchFilm />
         </Header>
         <Main/>
