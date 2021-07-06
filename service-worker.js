@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/MoveDB-app/precache-manifest.45c8c7802563a53cdb19da16703a3fa2.js"
+  "/MoveDB-app/precache-manifest.ab26c4d7a4cd2b5fdd769f92b624c8fe.js"
 );
 
 self.addEventListener('message', (event) => {

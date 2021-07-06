@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2c4f87e3fbf3d3169e06c1e40e6faaeb",
+    "revision": "ece597350fbc986bc650527785dd7143",
     "url": "/MoveDB-app/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/MoveDB-app/static/js/2.15823c5a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c962cbf91538663b0651",
-    "url": "/MoveDB-app/static/js/main.a3c13751.chunk.js"
+    "revision": "6839c7e4cfb471c63ff0",
+    "url": "/MoveDB-app/static/js/main.e0d4275b.chunk.js"
   },
   {
     "revision": "4ae550c2ca7a34e3e4c3",
