@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/movedb/static/js/main.a3c13751.chunk.js",
-    "main.js.map": "/movedb/static/js/main.a3c13751.chunk.js.map",
-    "runtime-main.js": "/movedb/static/js/runtime-main.6a466dad.js",
-    "runtime-main.js.map": "/movedb/static/js/runtime-main.6a466dad.js.map",
-    "static/js/2.15823c5a.chunk.js": "/movedb/static/js/2.15823c5a.chunk.js",
-    "static/js/2.15823c5a.chunk.js.map": "/movedb/static/js/2.15823c5a.chunk.js.map",
-    "index.html": "/movedb/index.html",
-    "precache-manifest.7cfcc469550333f35d71ed77f04ebf31.js": "/movedb/precache-manifest.7cfcc469550333f35d71ed77f04ebf31.js",
-    "service-worker.js": "/movedb/service-worker.js",
-    "static/js/2.15823c5a.chunk.js.LICENSE.txt": "/movedb/static/js/2.15823c5a.chunk.js.LICENSE.txt"
+    "main.js": "/MoveDB-app/static/js/main.a3c13751.chunk.js",
+    "main.js.map": "/MoveDB-app/static/js/main.a3c13751.chunk.js.map",
+    "runtime-main.js": "/MoveDB-app/static/js/runtime-main.0c2a2fab.js",
+    "runtime-main.js.map": "/MoveDB-app/static/js/runtime-main.0c2a2fab.js.map",
+    "static/js/2.15823c5a.chunk.js": "/MoveDB-app/static/js/2.15823c5a.chunk.js",
+    "static/js/2.15823c5a.chunk.js.map": "/MoveDB-app/static/js/2.15823c5a.chunk.js.map",
+    "index.html": "/MoveDB-app/index.html",
+    "precache-manifest.45c8c7802563a53cdb19da16703a3fa2.js": "/MoveDB-app/precache-manifest.45c8c7802563a53cdb19da16703a3fa2.js",
+    "service-worker.js": "/MoveDB-app/service-worker.js",
+    "static/js/2.15823c5a.chunk.js.LICENSE.txt": "/MoveDB-app/static/js/2.15823c5a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6a466dad.js",
+    "static/js/runtime-main.0c2a2fab.js",
     "static/js/2.15823c5a.chunk.js",
     "static/js/main.a3c13751.chunk.js"
   ]
