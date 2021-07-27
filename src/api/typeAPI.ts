@@ -5,6 +5,7 @@ export declare namespace typeAPI{
         genres: any;
         results: any;
         vote_count: number;
+        homepage: string;
         id: number;
         video: boolean;
         vote_average: number;

@@ -5666,6 +5666,7 @@ ul {
 .mv-single-hero {
   background: url('../images/uploads/hero-bg.jpg') no-repeat;
   height: 598px;
+  background-size: cover;
 }
 /*series single hero*/
 .sr-single-hero {
