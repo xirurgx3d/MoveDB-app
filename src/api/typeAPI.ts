@@ -19,5 +19,8 @@ export declare namespace typeAPI{
         adult: boolean;
         overview: string;
         release_date: string;
+        cast: [];
+        budget: number;
+        runtime:number
       }
 }

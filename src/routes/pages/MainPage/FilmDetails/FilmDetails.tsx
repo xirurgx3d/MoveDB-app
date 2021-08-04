@@ -36,7 +36,7 @@ const FilmDetails:React.FC<IFilmDetails> = (props:IFilmDetails) =>{
                 <DetailItemInfo detailflim={detailsFilme} />
             </DetailTpl>
             
-            <CastFilms casts={detailsFilme.cast} />
+            
             <RecomendFilm Detailid={id} />
         </div>
     )

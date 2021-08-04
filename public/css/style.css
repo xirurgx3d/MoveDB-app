@@ -4234,11 +4234,8 @@ ul {
 .cate .orange {
   background-color: #ec5a1a;
 }
-.movie_list .movie-item-style-2 img,
-.movie_single .movie-item-style-2 img,
-.userfav_list .movie-item-style-2 img {
-  width: 30%;
-}
+
+
 @media (max-width: 767px) {
   .movie_list .movie-item-style-2 img,
   .movie_single .movie-item-style-2 img,
@@ -5765,6 +5762,7 @@ ul {
   width: 170px;
   margin: 15px 0;
 }
+
 .landing-version .redbtn:hover {
   color: #fff;
 }
@@ -7958,6 +7956,9 @@ header .top-search input::-webkit-input-placeholder {
 }
 header .top-search input {
   background: url('../images/uploads/topsearch.png') no-repeat right 20px center;
+}
+.gener-active a{
+  color: #dd003f !important;
 }
 header #nav-icon1 {
   width: 15px;

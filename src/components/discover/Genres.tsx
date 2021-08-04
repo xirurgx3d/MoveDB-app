@@ -10,7 +10,7 @@ import { Ipametrs } from '../../routes/pages/MainPage/FilmList/Filmlist';
 const Genres:React.FC = () =>{
     const [genres,setGenres] = useState<Array<number>>([])
     const dispatch = useDispatch()
-    const params = useSelector<Iredusers>(state => state.films.params)
+    const params = useSelector<Iredusers,TinitialStateParams>(state => state.films.params)
 
     useEffect(()=>{
         Api.AllgetGenres().then(res =>{
@@ -28,7 +28,7 @@ const Genres:React.FC = () =>{
             <ul>
                 {
                     genres.map((data:any, index) =>{
-                        return (<li key={index}>
+                        return (<li key={index} className={(params.with_genres === data.id) && 'gener-active' || ''}>
                             <a onClick={e => handleGenre(e,data.id,params)}>{data.name}</a>
                         </li>)
                     })
